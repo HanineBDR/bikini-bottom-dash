@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Bikini Bottom Dash</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap');
+      
+      body {
+        font-family: 'Comic Sans MS', 'Comic Sans', cursive, 'Fredoka', sans-serif;
+        overflow: hidden;
+        background: linear-gradient(180deg, #87CEEB 0%, #4A90E2 50%, #2E5C8A 100%);
+        touch-action: none;
+      }
+      
+      .bubble {
+          position: fixed;
+          width: 40px;
+          height: 40px;
+          background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));
+          border-radius: 50%;
+          animation: float 8s infinite ease-in-out;
+          pointer-events: none;
+          opacity: 0.6;
+          z-index: 0;
+      }
+      
+      @keyframes float {
+          0% { transform: translateY(110vh) translateX(0); opacity: 0; }
+          10% { opacity: 0.6; }
+          90% { opacity: 0.6; }
+          100% { transform: translateY(-20vh) translateX(20px); opacity: 0; }
+      }
+      
+      canvas {
+        display: block;
+      }
+    </style>
+
+<link rel="stylesheet" href="/index.css">
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/bikini-bottom-dash/assets/index-CxjOGfpw.js"></script>
+</head>
+  <body>
+    <!-- Bubbles -->
+    <div class="bubble" style="left: 10%; animation-delay: 0s; width: 60px; height: 60px;"></div>
+    <div class="bubble" style="left: 30%; animation-delay: 2s; width: 30px; height: 30px;"></div>
+    <div class="bubble" style="left: 50%; animation-delay: 4s; width: 50px; height: 50px;"></div>
+    <div class="bubble" style="left: 70%; animation-delay: 1s; width: 40px; height: 40px;"></div>
+    <div class="bubble" style="left: 90%; animation-delay: 3s; width: 70px; height: 70px;"></div>
+    
+    <div id="root" class="w-full h-full absolute inset-0 z-10"></div>
+  </body>
+</html>
